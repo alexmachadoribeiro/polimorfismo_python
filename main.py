@@ -16,12 +16,20 @@ class Carro(Veiculo):
     def __init__(self, marca, modelo, portas):
         super().__init__(marca, modelo)
         self.portas = portas
+    
+    def mostrar_detalhes(self):
+        super().mostrar_detalhes()
+        print(f'Número de portas: {self.portas}.')
 
 # NOTE: subclasse moto
 class Moto(Veiculo):
     def __init__(self, marca, modelo, cilindradas):
         super().__init__(marca, modelo)
         self.cilindradas = cilindradas
+
+    def mostrar_detalhes(self):
+        super().mostrar_detalhes()
+        print(f'Cilindradas: {self.cilindradas}.')
 
 # NOTE: função polimórfica
 def mostrar_informacoes_veiculo(veiculo):
@@ -33,4 +41,5 @@ if __name__ == '__main__':
     moto = Moto('Honda', 'CBR', 650)
 
     mostrar_informacoes_veiculo(carro)
+    print('-'*30)
     mostrar_informacoes_veiculo(moto)
